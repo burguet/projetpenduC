@@ -1,0 +1,3 @@
+﻿  main.c
+d:\bts\pendu\basependuc-main\projet-pendu-base\main.c(52): warning C4267: '=' : conversion de 'size_t' en 'long', perte possible de données
+  Projet-Pendu-Base.vcxproj -> D:\bts\pendu\BasePenduC-main\x64\Debug\Projet-Pendu-Base.exe
