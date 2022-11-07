@@ -25,11 +25,11 @@ int main(int argc, char* argv[])
 
 {
 
-	char lettre = 0; // Stocke la lettre proposée par l'utilisateur (retour du scanf)
+	char lettre = 0; // Stocke la lettre proposï¿½e par l'utilisateur (retour du scanf)
 
-	char motSecret[100] = { 0 }; // Ce sera le mot à trouver
+	char motSecret[100] = { 0 }; // Ce sera le mot ï¿½ trouver
 
-	int *lettreTrouvee = NULL; // Un tableau de booléens. Chaque case correspond à une lettre du mot secret. 0 = lettre non trouvée, 1 = lettre trouvée
+	int *lettreTrouvee = NULL; // Un tableau de Chaque case correspond ï¿½ une lettre du mot secret.
 
 	long coupsRestants = 10; // Compteur de coups restants (0 = mort)
 
@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 
 
 
-	lettreTrouvee = malloc(tailleMot * sizeof(int)); // On alloue dynamiquement le tableau lettreTrouvee (dont on ne connaissait pas la taille au départ)
+	lettreTrouvee = malloc(tailleMot * sizeof(int)); // On alloue dynamiquement le tableau lettreTrouvee
 
 	if (lettreTrouvee == NULL)
 
@@ -67,9 +67,7 @@ int main(int argc, char* argv[])
 
 
 
-	/* On continue à jouer tant qu'il reste au moins un coup à jouer ou qu'on
-
-	 n'a pas gagné */
+	/* On continue a jouer tant qu'il reste au moins un coup a jouer  */
 
 	while (coupsRestants > 0 && !gagne(lettreTrouvee, tailleMot))
 
@@ -81,21 +79,19 @@ int main(int argc, char* argv[])
 
 
 
-		/* On affiche le mot secret en masquant les lettres non trouvées
-
-		Exemple : *A**ON */
+		/* On affiche le mot secret en masquant les lettres non trouvees */
 
 		for (i = 0; i < tailleMot; i++)
 
 		{
 
-			if (lettreTrouvee[i]) // Si on a trouvé la lettre n° i
+			if (lettreTrouvee[i]) // Si on a trouve la lettre nï¿½ i
 
 				printf("%c", motSecret[i]); // On l'affiche
 
 			else
 
-				printf("*"); // Sinon, on affiche une étoile pour les lettres non trouvées
+				printf("*"); // Sinon, on affiche une ï¿½toile 
 
 		}
 
@@ -107,13 +103,13 @@ int main(int argc, char* argv[])
 
 
 
-		// Si ce n'était PAS la bonne lettre
+		// Si ce n'etait PAS la bonne lettre
 
 		if (!rechercheLettre(lettre, motSecret, lettreTrouvee))
 
 		{
 
-			coupsRestants--; // On enlève un coup au joueur
+			coupsRestants--; // On enleve un coup
 
 		}
 
@@ -131,7 +127,7 @@ int main(int argc, char* argv[])
 
 
 
-	free(lettreTrouvee); // On libère la mémoire allouée manuellement (par malloc)
+	free(lettreTrouvee); // On libere la memoire 
 
 
 
@@ -149,19 +145,19 @@ char lireCaractere()
 
 
 
-	caractere = getchar(); // On lit le premier caractère
+	caractere = getchar(); // On lit le premier caractere
 
-	caractere = toupper(caractere); // On met la lettre en majuscule si elle ne l'est pas déjà
+	caractere = toupper(caractere); // On met la lettre en majuscule 
 
 
 
-	// On lit les autres caractères mémorisés un à un jusqu'au \n
+	// On lit les autres caracteres
 
 	while (getchar() != '\n');
 
 
 
-	return caractere; // On retourne le premier caractère qu'on a lu
+	return caractere; // On retourne le premier caractere 
 
 }
 
@@ -205,19 +201,19 @@ int rechercheLettre(char lettre, char motSecret[], int lettreTrouvee[])
 
 
 
-	// On parcourt motSecret pour vérifier si la lettre proposée y est
+	// On parcourt motSecret pour verifier 
 
 	for (i = 0; motSecret[i] != '\0'; i++)
 
 	{
 
-		if (lettre == motSecret[i]) // Si la lettre y est
+		if (lettre == motSecret[i]) 
 
 		{
 
-			bonneLettre = 1; // On mémorise que c'était une bonne lettre
+			bonneLettre = 1; // On memorise que c'etait une bonne lettre
 
-			lettreTrouvee[i] = 1; // On met à 1 la case du tableau de booléens correspondant à la lettre actuelle
+			lettreTrouvee[i] = 1; // On met a 1 la case du tableau correspondant ala lettre 
 
 		}
 
